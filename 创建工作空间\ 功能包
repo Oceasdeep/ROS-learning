@@ -1,0 +1,18 @@
+在home目录下：
+
+  mkdir -p ~/catkin_ws/src    //创建工作空间目录
+  cd ~/catkin_ws/src
+  catkin_init_workspace       //初始化工作空间
+  cd ~/catkin_ws
+  catkin_make                 //编译工作空间
+  cd
+  echo "source ~/catkin_ws/devel/setup.bash" >> ~/bashrc      //添加工作空夹到环境变量
+  echo $ROS_PACKAGE_PASH       //查看环境变量路径
+  sudo gedit ~/.bashrc         //查看.bachrc文件中是否将环境变量添加进去
+  
+  
+  在catkin_ws/src目录下：
+  cd ~/catkin_ws/src
+  catkin_create_pkg iarc2018 roscpp rospy std_msgs      //iarc2018是包到名称，roscpp、rospy、std_msgs是包的依赖，
+                                                        //这些依赖后期可以在Cmakelist.txt中find_package中修改
+  创建完功能包在src
